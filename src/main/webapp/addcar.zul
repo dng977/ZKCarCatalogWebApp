@@ -1,0 +1,35 @@
+<window id="addCarWin" title="Add a car" width="600px" border="normal"
+		apply="demo.getting_started.controller.AddCarController">
+	<grid>
+		<columns>
+			<column width="150px"/>
+			<column width="400px"/>
+        </columns>
+        <rows>
+            <row>
+                Model:
+                <textbox id="modelTextbox" width ="200px" constraint="no empty" />
+            </row>
+            <row>
+                Make:
+                <textbox id="makeTextbox" width ="200px" constraint="no empty" />
+            </row>
+            <row>
+                Price:
+                <intbox id="priceIntbox" width ="200px" constraint="no zero, no negative, no empty" />
+            </row>
+            <row>
+                Colour:
+                <textbox id="colourTextbox" width ="200px" constraint="no empty" />
+            </row>
+            <row>
+                Description:
+                <textbox rows="3" id="descriptionTextbox" width ="300px" constraint="no empty" />
+            </row>
+        </rows>
+    </grid>
+    <hbox pack="center" align="center" spacing="30px">
+    	<button id="submitButton" label="Add" />
+    	<button id="cancelButton" label="Cancel"/>
+	</hbox>	
+</window>

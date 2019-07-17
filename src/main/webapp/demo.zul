@@ -1,0 +1,37 @@
+<window id="win" title="Search" border="normal"
+	apply="demo.getting_started.controller.SearchController">
+	<hbox spacing="35px" align="center">
+		<hbox spacing="15px" align="center">
+			Keyword:
+			<textbox id="keywordBox" />
+			<button id="searchButton" label="Search" iconSclass="z-icon-search" />
+		</hbox>
+		<button id="addButton" label="Add car"/>
+		<button id="deleteButton" label="Delete Car" visible="false"/>
+	</hbox>
+	<checkbox id="pageCheckBox" label="Paging" checked="true" />
+	<listbox id="carListbox" model="${win$composer.carsModel}" mold="paging" pageSize="5" emptyMessage="No car found in the result" style="margin-top:10px" itemRenderer="${win$composer.itemRenderer}" >
+		<listhead>
+			<listheader label="Model" sort="auto(model)" />
+			<listheader label="Make" sort="auto(make)"/>
+			<listheader label="Price" sort="auto(price)"/>
+			<listheader label="Colour" sort="auto(colour)"/>
+		</listhead>
+	</listbox>	
+	<hbox style="margin-top:20px" id="detailBox" visible="false">
+		<image id="previewImage" style="padding:10px" />
+		<vbox>
+			<hlayout>
+				Model : <label id="modelLabel" style="font-weight:bold"/>
+			</hlayout>
+			<hlayout>
+				Make : <label id="makeLabel" style="font-weight:bold"/>
+			</hlayout>
+			<hlayout>
+				Price : 
+				<span>$<label id="priceLabel" style="font-weight:bold"/></span>
+			</hlayout>
+			<label id="descriptionLabel" />
+		</vbox>
+	</hbox>
+</window>
